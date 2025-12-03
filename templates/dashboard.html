@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bunkify - Dashboard</title>
+</head>
+<body>
+
+<h2>Welcome {{ session['email'] }}</h2>
+
+<a href="/logout">Logout</a>
+<a href="/history">View History</a>
+
+<h3>Add Subject</h3>
+<form method="POST" action="/add-subject">
+    <input type="text" name="name" placeholder="Subject name" required>
+    <button type="submit">Add</button>
+</form>
+
+<h2>Your Subjects</h2>
+
+<table border="1" cellpadding="10">
+<tr>
+    <th>Subject</th>
+    <th>Total</th>
+    <th>Attended</th>
+    <th>Bunked</th>
+    <th>Attendance %</th>
+    <th>Emoji</th>
+    <th>Actions</th>
+</tr>
+
+{% for s in subjects %}
+{% set percent = (s.attended/s.total)*100 if s.total > 0 else 0 %}
+
+<tr>
+    <td>{{ s.name }}</td>
+    <td>{{ s.total }}</td>
+    <td>{{ s.attended }}</td>
+    <td>{{ s.bunked }}</td>
+
+    <td>{{ "%.2f"|format(percent) }}%</td>
+
+    <td>
+    {% if percent < 50 %}
+        😡
+    {% elif percent < 75 %}
+        🙂
+    {% else %}
+        😎
+    {% endif %}
+    </td>
+
+    <td>
+        <a href="/mark/{{s.id}}/attend">Attend</a>
+        <a href="/mark/{{s.id}}/bunk">Bunk</a><br><br>
+
+        <a href="/edit-subject/{{s.id}}">Edit</a>
+        <a href="/delete-subject/{{s.id}}">Delete</a><br><br>
+
+        <a href="/status/{{s.id}}">Risk Check</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+<h3>Daily Motivation 💡</h3>
+<iframe src="/quote" width="100%" height="50"></iframe>
+
+</body>
+    </html>
+  
