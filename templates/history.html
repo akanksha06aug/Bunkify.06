@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bunkify - History</title>
+</head>
+<body>
+
+<h2>Your Bunk / Attend History</h2>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+<table border="1" cellpadding="10">
+<tr>
+    <th>Subject</th>
+    <th>Date</th>
+    <th>Action</th>
+</tr>
+
+{% for h in history %}
+<tr>
+    <td>{{ h.subject_name }}</td>
+    <td>{{ h.date }}</td>
+    <td>{{ h.action }}</td>
+</tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
