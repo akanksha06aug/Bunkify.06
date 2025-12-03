@@ -4,7 +4,6 @@ BUNKIFY is a Flask-based college class bunk prediction system that helps student
 
 This project includes:
 ✅ Email + Password Login
-✅ OTP based account creation
 ✅ Forgot Password + Resend OTP
 ✅ Add / Edit / Delete Subjects
 ✅ Track Bunked Classes
@@ -15,7 +14,7 @@ This project includes:
 ✅ Internal Marks Risk
 ✅ Ready for GitHub & Render Deployment
 
----
+---j
 
 ## 🔧 Technologies Used
 
@@ -41,7 +40,6 @@ BUNKIFY/
 ├── templates/
 │   ├── login.html
 │   ├── register.html
-│   ├── verify_otp.html
 │   ├── forgot_password.html
 │   ├── reset_password.html
 │   ├── dashboard.html
