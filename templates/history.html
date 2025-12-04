@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+<title>History</title>
+</head>
+<body>
+<div class="container">
+<h2>Bunk History</h2>
+
+{% for h in history %}
+<p>{{h[2]}} - {{h[3]}} ({{h[4]}})</p>
+{% endfor %}
+
+<a href="/dashboard">Back</a>
+</div>
+</body>
+</html>
