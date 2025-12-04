@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+<title>Dashboard</title>
+</head>
+<body>
+
+<div class="container">
+<h2>Welcome to BUNKIFY 🚀</h2>
+
+<p><b>Motivation:</b> {{quote}}</p>
+
+<a href="/add">➕ Add Subject</a> | 
+<a href="/history">📜 History</a> | 
+<a href="/logout">🚪 Logout</a>
+
+<hr>
+
+{% for s in subjects %}
+<div class="card">
+<h3>{{s[2]}}</h3>
+<p>Total: {{s[3]}} | Attended: {{s[4]}}</p>
+
+{% set percent = get_percent(s[4], s[3]) %}
+
+<p>Attendance: {{percent}}%</p>
+<p>Reaction: {{reaction(percent)}} </p>
+<p>Risk: {{risk(percent)}}</p>
+
+<a href="/edit/{{s[0]}}">✏ Edit</a>
+<a href="/delete/{{s[0]}}">🗑 Delete</a>
+</div>
+{% endfor %}
+
+</div>
+</body>
+</html>
