@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+<title>Edit</title>
+</head>
+<body>
+<div class="container">
+<h2>Edit Subject</h2>
+
+<form method="POST">
+    <input type="text" name="name" value="{{subject[2]}}" required>
+    <input type="number" name="total" value="{{subject[3]}}" required>
+    <input type="number" name="attended" value="{{subject[4]}}" required>
+
+    <button>Update</button>
+</form>
+
+<a href="/dashboard">Back</a>
+</div>
+</body>
+</html>
