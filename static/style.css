@@ -1,0 +1,49 @@
+body {
+ font-family: Arial;
+ background: linear-gradient(to right, #5f72ff, #9f5eff);
+ padding: 40px;
+}
+
+.container {
+ background: white;
+ padding: 25px;
+ width: 350px;
+ margin: auto;
+ border-radius: 12px;
+}
+
+input, button {
+ width: 100%;
+ padding: 10px;
+ margin-top: 10px;
+}
+
+button {
+ background: #5f72ff;
+ color: white;
+ border: none;
+ border-radius: 8px;
+}
+
+table {
+ width: 100%;
+ margin-top: 10px;
+}
+
+th {
+ background: #5f72ff;
+ color: white;
+ padding: 5px;
+}
+
+td {
+ text-align: center;
+ padding: 5px;
+ border-bottom: 1px solid #ddd;
+}
+
+a {
+ display: block;
+ margin-top: 10px;
+ text-align: center;
+}
